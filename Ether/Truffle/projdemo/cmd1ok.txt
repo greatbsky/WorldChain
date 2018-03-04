@@ -1,0 +1,156 @@
+Architect:projdemo great$ truffle compile
+Compiling ./contracts/Migrations.sol...
+Compiling ./contracts/SimpleStorage.sol...
+Compiling ./contracts/TestCoin.sol...
+Writing artifacts to ./build/contracts
+
+Architect:projdemo great$ truffle migrate
+Using network 'development'.
+
+Running migration: 1_initial_migration.js
+  Deploying Migrations...
+  ... 0xb33e6a00f7ec5e7a43a095e70155bace4eda2d2b97b6d1f13e599c77a4ce44be
+  Migrations: 0x8cdaf0cd259887258bc13a92c0a6da92698644c0
+Saving successful migration to network...
+  ... 0xd7bc86d31bee32fa3988f1c1eabce403a1b5d570340a3a9cdba53a472ee8c956
+Saving artifacts...
+Running migration: 2_deploy_contracts.js
+  Deploying TestCoin...
+  ... 0xe83c70a244d630d9404eb0c7c3364980efbda6f79c5b4818251e1f3605d95a90
+  TestCoin: 0x345ca3e014aaf5dca488057592ee47305d9b3e10
+Saving successful migration to network...
+  ... 0xf36163615f41ef7ed8f4a8f192149a0bf633fe1a2398ce001bf44c43dc7bdda0
+Saving artifacts...
+Running migration: 3_deploy_contracts.js
+  Deploying SimpleStorage...
+  ... 0xb349b9b38d59e2985d06f906923e01123965ac56739c5afab5944ec7aa41ba8c
+  SimpleStorage: 0x8f0483125fcb9aaaefa9209d8e9d7b9c8b9fb90f
+Saving successful migration to network...
+  ... 0x55b13865c62964c3b211dd22c1106101855e698e00dbf6d21aad05d6707cf626
+Saving artifacts...
+
+
+Architect:projdemo great$ truffle console
+truffle(development)> web3.eth.gasPrice.toString()
+'20000000000'
+
+truffle(development)> web3.eth.coinbase
+'0x627306090abab3a6e1400e9345bc60c78a8bef57'
+truffle(development)> var coinbase = web3.eth.coinbase;
+undefined
+truffle(development)> web3.eth.getBalance(coinbase);
+BigNumber { s: 1, e: 19, c: [ 999082, 5700000000000 ] }
+truffle(development)> SimpleStorage.deployed().then(function(instance){return instance.get.call();}).then(function(value){return value.toNumber()});
+0
+truffle(development)> SimpleStorage.deployed().then(function(instance){return instance.set(9);});
+{ tx: '0x2ccf5384a805b3ae280e5c905e74be2a80482f79531b714882ad6ea24fff8ea0',
+  receipt:
+   { transactionHash: '0x2ccf5384a805b3ae280e5c905e74be2a80482f79531b714882ad6ea24fff8ea0',
+     transactionIndex: 0,
+     blockHash: '0xf94ae0d96748822982d209ace9cc77263548696e4b2bc402781226ce9a5f70b1',
+     blockNumber: 7,
+     gasUsed: 41642,
+     cumulativeGasUsed: 41642,
+     contractAddress: null,
+     logs: [],
+     status: '0x01',
+     logsBloom: '0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000' },
+  logs: [] }
+truffle(development)> SimpleStorage.deployed().then(function(instance){return instance.get.call();}).then(function(value){return value.toNumber()});
+9
+
+truffle(development)> TestCoin.deployed().then(function(c){return c.mint("0xf17f52151EbEF6C7334FAD080c5704D77216b732", 1);})
+{ tx: '0xb200f81218a7f2bd55cc297e88dcf3f211cd6dcaad0ce0adea903554d6562766',
+  receipt:
+   { transactionHash: '0xb200f81218a7f2bd55cc297e88dcf3f211cd6dcaad0ce0adea903554d6562766',
+     transactionIndex: 0,
+     blockHash: '0x0749186e9eaedcfcf4d4158e86ef168db62781a93b3b45cc7054d89388246b0d',
+     blockNumber: 7,
+     gasUsed: 43712,
+     cumulativeGasUsed: 43712,
+     contractAddress: null,
+     logs: [],
+     status: '0x01',
+     logsBloom: '0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000' },
+  logs: [] }
+truffle(development)> web3.eth.getBalance(coinbase);
+BigNumber { s: 1, e: 19, c: [ 999038, 34500000000000 ] }
+truffle(development)> TestCoin.deployed().then(function(c){return c.mint("0x627306090abaB3A6e1400e9345bC60c78a8BEf57", 10);})
+{ tx: '0xa43d78084272c052c7a63626abee434eefb8b6fd6111ae6d2688b9eb8ffbbae6',
+  receipt:
+   { transactionHash: '0xa43d78084272c052c7a63626abee434eefb8b6fd6111ae6d2688b9eb8ffbbae6',
+     transactionIndex: 0,
+     blockHash: '0x9d3a160910e9492728ef000a18ef406fd846de4503f280db26f8f82c63e1709d',
+     blockNumber: 8,
+     gasUsed: 43712,
+     cumulativeGasUsed: 43712,
+     contractAddress: null,
+     logs: [],
+     status: '0x01',
+     logsBloom: '0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000' },
+  logs: [] }
+truffle(development)> web3.eth.getBalance(coinbase);
+BigNumber { s: 1, e: 19, c: [ 998994, 63300000000000 ] }
+truffle(development)> web3.currentProvider
+HttpProvider {
+  host: 'http://127.0.0.1:7545',
+  timeout: 0,
+  user: undefined,
+  password: undefined,
+  headers: undefined,
+  send: [Function],
+  sendAsync: [Function],
+  _alreadyWrapped: true }
+truffle(development)> TestCoin.deployed().then(function(c){return c.getBalance("0x627306090abaB3A6e1400e9345bC60c78a8BEf57");})
+BigNumber { s: 1, e: 1, c: [ 10 ] }
+truffle(development)> TestCoin.deployed().then(function(c){return c.sendCoin("0xf17f52151EbEF6C7334FAD080c5704D77216b732", 3);})
+{ tx: '0x8ad56c362d7f2c8db49492055b487706701a032eeda8c60f69563114e41111cd',
+  receipt:
+   { transactionHash: '0x8ad56c362d7f2c8db49492055b487706701a032eeda8c60f69563114e41111cd',
+     transactionIndex: 0,
+     blockHash: '0x6f203450ab8d483b3c2e1f23353cfa3c8f3f22bfa9445d0ad498b9cc4fd4b94c',
+     blockNumber: 9,
+     gasUsed: 35840,
+     cumulativeGasUsed: 35840,
+     contractAddress: null,
+     logs: [ [Object] ],
+     status: '0x01',
+     logsBloom: '0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000040000004000000000000000000000000000000000000000000000000000000000000000000010000000000000' },
+  logs:
+   [ { logIndex: 0,
+       transactionIndex: 0,
+       transactionHash: '0x8ad56c362d7f2c8db49492055b487706701a032eeda8c60f69563114e41111cd',
+       blockHash: '0x6f203450ab8d483b3c2e1f23353cfa3c8f3f22bfa9445d0ad498b9cc4fd4b94c',
+       blockNumber: 9,
+       address: '0x345ca3e014aaf5dca488057592ee47305d9b3e10',
+       type: 'mined',
+       event: 'Sent',
+       args: [Object] } ] }
+truffle(development)> TestCoin.deployed().then(function(c){return c.getBalance("0x627306090abaB3A6e1400e9345bC60c78a8BEf57");})
+BigNumber { s: 1, e: 0, c: [ 7 ] }
+truffle(development)> TestCoin.deployed().then(function(c){return c.getBalance("0xf17f52151EbEF6C7334FAD080c5704D77216b732");})
+BigNumber { s: 1, e: 0, c: [ 4 ] }
+truffle(development)>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//.

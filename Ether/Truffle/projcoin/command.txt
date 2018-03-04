@@ -1,0 +1,86 @@
+
+Architect:projcoin great$ truffle unbox metacoin
+Downloading...
+Unpacking...
+Setting up...
+Unbox successful. Sweet!
+Commands:
+  Compile contracts: truffle compile
+  Migrate contracts: truffle migrate
+  Test contracts:    truffle test
+
+Architect:projcoin great$ truffle compile
+Compiling ./contracts/ConvertLib.sol...
+Compiling ./contracts/MetaCoin.sol...
+Compiling ./contracts/Migrations.sol...
+Writing artifacts to ./build/contracts
+
+Architect:projcoin great$ truffle migrate
+Using network 'development'.
+Running migration: 1_initial_migration.js
+  Deploying Migrations...
+  ... 0x29c0487a979dcb30ff85c9c870e4f4729758e56639c5e1461d0b24b73d1b4ed2
+  Migrations: 0x805a4ef12fc530a2b7b227b4c9c490dffc8f6287
+Saving successful migration to network...
+  ... 0xc52d2920e75acd27963056739a865dd7f88b39078e976e721737d0415555a8ab
+Saving artifacts...
+Running migration: 2_deploy_contracts.js
+  Deploying ConvertLib...
+  ... 0xf5d8c5ed30c5e54cfc870736ea5b0fb99e8d77cb5f3d0f569d0d6136844b6822
+  ConvertLib: 0x3f3c2131d0ccd77651be2ac5032e723b558f036b
+  Linking ConvertLib to MetaCoin
+  Deploying MetaCoin...
+  ... 0x30f4f2ff83390c2b4b2c0674ea64fa41041e4001eb792b75fcfca68176dab65c
+  MetaCoin: 0x2ec4a6da5f30fd6b51838d9ca8dca2e82e23f4f9
+Saving successful migration to network...
+  ... 0xdd3b04dee3dd2b80b844d1a43990c4e9477c58f867c2a1d51caa2c99f5e6953c
+Saving artifacts...
+Architect:projcoin great$ truffle test
+Using network 'development'.
+Compiling ./contracts/ConvertLib.sol...
+Compiling ./contracts/MetaCoin.sol...
+Compiling ./test/TestMetacoin.sol...
+Compiling truffle/Assert.sol...
+Compiling truffle/DeployedAddresses.sol...
+  TestMetacoin
+    ✓ testInitialBalanceUsingDeployedContract (101ms)
+    ✓ testInitialBalanceWithNewMetaCoin (96ms)
+  Contract: MetaCoin
+    ✓ should put 10000 MetaCoin in the first account
+    ✓ should call a function that depends on a linked library
+    ✓ should send coin correctly (87ms)
+  5 passing (1s)
+
+  Architect:projcoin great$ truffle server
+  Serving static assets in ./build on port 8080...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//.

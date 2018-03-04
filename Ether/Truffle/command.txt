@@ -1,0 +1,79 @@
+Architect:~ great$ npm i -g npm to update
+Architect:~ great$ npm install -g truffle
+Architect:~ great$ npm install -g ganache-cli
+
+
+Architect:~ great$ ganache-cli
+Ganache CLI v6.0.3 (ganache-core: 2.0.2)
+Available Accounts
+==================
+(0) 0x6fea196d60cb35e4267607a91714773e68c72de9
+(1) 0xd24db4f3f8c63d54864b52ea31380e691cdd7560
+(2) 0xfdb0639e610283b1d6913fdc7a917b4a1bdde1eb
+(3) 0x7f86a64a46fc76d02f06526adc1beb610423e259
+(4) 0xb7ffb527b7e39655f04c2b6feb73811ed79c0fe9
+(5) 0xb85aa1b373b4ef4ed8b70e4d097f1d4742ebffb3
+(6) 0x97abdf5cb7ba5984ca2e6830691ca78e7a1608a1
+(7) 0x51057697f643f43324e2121ecdb77294aef17a6f
+(8) 0xffddc5213dc22b1a105488599fd5f3a85b54b83d
+(9) 0xb4d55f19e5749e020187124a8866073c3f714b9b
+Private Keys
+==================
+(0) 58b1f838953f08e97d5d2c8ec498e3495d5e1297eb05cd33abc47274a81c385c
+(1) ebe32345bf445eabdce18a260e31a2627452e9eef905586da4f9e3d9cec1c095
+(2) 5651df5f994d848c8162fd91183048d3a00dcb693543e893d60dc45826ead814
+(3) 96f92946a4f0315dd860e1f064e2c5df295a985ac94cf59ef082c91c7d1bfc6e
+(4) 9a65c1c85a910cac9633693e99b785f2d6c65ade7446dee4aa4e3ba3aec1ad1b
+(5) 4671786245c2e63cbe93a17aea5729f51f4d61742983573a2304075262335916
+(6) d89bebbfca6714fe0b5731e71d3a3caf29e639f3aeb94bf3e706cabbafd2a5d8
+(7) db217429777bab2056c1b51e4c5306df30bc9ec4074f05e400a1ef57e01b3549
+(8) 6b8078a21c159ea84eeabad92d6f8a7bf7a9a7849e27b6a5e03a2e8f40f2436e
+(9) 6bde6479b268b92ed0d12bcef5fd5a02aa1e461f086dc20b548b5f5585c73ec3
+HD Wallet
+==================
+Mnemonic:      exile quit sense east virtual genuine dignity frog total hub visit cousin
+Base HD Path:  m/44'/60'/0'/0/{account_index}
+Listening on localhost:8545
+
+Architect:projdemo great$ truffle version
+Truffle v4.1.0 (core: 4.1.0)
+Solidity v0.4.19 (solc-js)
+
+Architect:~ great$ cd /Data/MyWork9/WorldChain/Ether/Truffle/projdemo
+Architect:projdemo great$ truffle init
+Architect:projdemo great$ truffle migrate --network deployment                      //--rest -f number
+
+
+
+Architect:projdemo great$ truffle serve                                         //https://github.com/trufflesuite/truffle/issues/734
+Serving static assets in ./build on port 8080...
+
+http://127.0.0.1:8080/
+
+
+
+
+
+truffle exec xxx.js
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//.
